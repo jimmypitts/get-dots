@@ -24,6 +24,9 @@ body {
   background-color: #f5f5f5;
 }
 
+.credit {
+  text-align: center;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -39,9 +42,10 @@ body {
 }
 
 
+/* Svg stuff */
 #svg-container {
   border: 1px solid #DDD;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
   display: block;
 
 }
@@ -69,3 +73,24 @@ circle {
   stroke: #ff7f0e;
 }
 
+
+/* Code */
+#output {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+code {
+  max-width: 800px;
+  padding: 15px;
+}
+
+/* Header */
+#show {
+  float: right;
+  margin: 5px 20px 0 0;
+}
+
+h1 {
+  display: inline;
+}

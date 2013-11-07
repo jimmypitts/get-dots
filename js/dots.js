@@ -11,9 +11,9 @@ var dragged = null,
     selected = points[0];
 
 var line = d3.svg.line();
-line.interpolate('cardinal');
+line.interpolate('linear');
 
-var svg = d3.select("#container").append("svg")
+var svg = d3.select("#svg").append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("tabindex", 1)
