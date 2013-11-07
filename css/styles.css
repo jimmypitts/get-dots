@@ -58,7 +58,7 @@ rect {
 circle,
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: #C0C0C0;
   stroke-width: 1.5px;
 }
 
@@ -69,8 +69,8 @@ circle {
 }
 
 .selected {
-  fill: #ff7f0e;
-  stroke: #ff7f0e;
+  fill: #ab403c;
+  stroke: #ab403c;
 }
 
 
