@@ -5,8 +5,6 @@ var points = d3.range(1, 2).map(function(i) {
   return [i * width / 5, 50 + Math.random() * (height - 100)];
 });
 
-console.log(points);
-
 var dragged = null,
     selected = points[0];
 
