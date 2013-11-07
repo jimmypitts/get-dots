@@ -1,14 +1,17 @@
 var width = 800,
     height = 500;
 
-var points = d3.range(1, 5).map(function(i) {
+var points = d3.range(1, 2).map(function(i) {
   return [i * width / 5, 50 + Math.random() * (height - 100)];
 });
+
+console.log(points);
 
 var dragged = null,
     selected = points[0];
 
 var line = d3.svg.line();
+line.interpolate('cardinal');
 
 var svg = d3.select("#container").append("svg")
     .attr("width", width)
@@ -31,27 +34,6 @@ d3.select(window)
     .on("mouseup", mouseup)
     .on("keydown", keydown);
 
-d3.select("#interpolate")
-    .on("change", change)
-  .selectAll("option")
-    .data([
-      "linear",
-      "step-before",
-      "step-after",
-      "basis",
-      "basis-open",
-      "basis-closed",
-      "cardinal",
-      "cardinal-open",
-      "cardinal-closed",
-      "monotone"
-    ])
-  .enter().append("option")
-    .attr("value", function(d) { return d; })
-    .text(function(d) { return d; });
-
-// svg.node().focus();
-
 function redraw() {
   svg.select("path").attr("d", line);
 
@@ -64,7 +46,7 @@ function redraw() {
     .transition()
       .duration(750)
       .ease("elastic")
-      .attr("r", 6.5);
+      .attr("r", 4.5);
 
   circle
       .classed("selected", function(d) { return d === selected; })
@@ -77,11 +59,6 @@ function redraw() {
     d3.event.preventDefault();
     d3.event.stopPropagation();
   }
-}
-
-function change() {
-  line.interpolate(this.value);
-  redraw();
 }
 
 function mousedown() {
